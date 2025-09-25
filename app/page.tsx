@@ -60,13 +60,13 @@ const page = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center relative overflow-hidden pt-10 md:pt-1"
+        className="min-h-screen flex items-start pt-0 relative overflow-hidden "
       >
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full opacity-10 animate-pulse delay-1000"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 relative z-10 pt-10 lg:pt-50">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in slide-in-from-left-10 duration-1000">
               <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">

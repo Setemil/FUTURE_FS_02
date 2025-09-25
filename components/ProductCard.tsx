@@ -11,7 +11,7 @@ const ProductCard = ({ product }: { product: Products }) => {
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-indigo-100 transition-all duration-300 overflow-hidden group">
       {/* Image Container */}
       <div className="relative w-full h-64 overflow-hidden bg-gray-50">
-        <Link href={`/products/${product.id}`}>
+        <Link href={`/products/${product._id}`}>
         <Image
           src={product.image}
           alt={product.name}

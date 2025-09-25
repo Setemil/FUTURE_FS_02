@@ -18,7 +18,7 @@ const CartPage = () => {
   const total = subtotal + tax + shipping;
 
   const CartItem = ({ item }: { item: CartItem }) => (
-    <div className="flex flex-col sm:flex-row gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+    <div className="flex flex-col sm:flex-row gap-6 p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       <div className="flex-shrink-0">
         <Image
           alt={item.name}
@@ -44,7 +44,7 @@ const CartPage = () => {
           <div className="flex items-center gap-3 mt-2 sm:mt-0">
             <div className="flex items-center border border-gray-200 rounded-md">
               <button
-                onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                onClick={() => updateQuantity(item._id, item.quantity - 1)}
                 disabled={item.quantity === 1}
                 className={`p-1 rounded-l-md transition-colors ${
                   item.quantity === 1
@@ -54,11 +54,11 @@ const CartPage = () => {
               >
                 <Minus className="w-4 h-4 text-gray-600" />
               </button>
-              <span className="px-3 py-1 text-sm font-medium bg-gray-50 min-w-12 text-center">
+              <span className="px-4 py-1 text-sm font-medium bg-gray-50 min-w-12 text-center">
                 {item.quantity}
               </span>
               <button
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                onClick={() => updateQuantity(item._id, item.quantity + 1)}
                 className="p-1 hover:bg-gray-100 transition-colors rounded-r-md"
               >
                 <Plus className="w-4 h-4 text-gray-600" />
@@ -66,7 +66,7 @@ const CartPage = () => {
             </div>
 
             <button
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => removeFromCart(item._id)}
               className="p-2 text-red-500 hover:bg-red-50 rounded-md transition-colors"
             >
               <Trash2 className="w-4 h-4" />
@@ -89,7 +89,7 @@ const CartPage = () => {
   if (cart.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-sm p-8 text-center">
             <ShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -115,7 +115,7 @@ const CartPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
+        <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
@@ -131,8 +131,8 @@ const CartPage = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
@@ -151,14 +151,14 @@ const CartPage = () => {
 
             <div className="space-y-4">
               {cart.map((item) => (
-                <CartItem key={item.id} item={item} />
+                <CartItem key={item._id} item={item} />
               ))}
             </div>
           </div>
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-4">
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 sticky top-4">
               <h2 className="text-xl font-semibold text-gray-900 mb-6">
                 Order Summary
               </h2>
