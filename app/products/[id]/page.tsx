@@ -33,7 +33,7 @@ const ProductPage = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`
+          `/products/${id}`
         );
         if (!res.ok) throw new Error("Failed to fetch product");
         const data = await res.json();
