@@ -50,15 +50,7 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     if (product) {
-      const cartItem = {
-        _id: product._id,
-        name: product.name,
-        price: product.discountedPrice,
-        image: product.image,
-        category: product.category,
-      };
-
-      addToCart(cartItem);
+      addToCart(product);
     }
   };
 
