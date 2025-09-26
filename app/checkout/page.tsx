@@ -104,8 +104,8 @@ const CheckoutPage = () => {
     }
 
     try {
-      clearCart();
       router.push("/order-success");
+      clearCart();
     } catch (error) {
       alert("Something went wrong. Please try again.");
       console.error("[handleSubmit] Error placing order: ", error);
